@@ -7,7 +7,6 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   height: 100%;
 }
 
@@ -28,7 +27,6 @@ html, body {
     display:flex;
     align-items: center;
     flex-wrap: wrap;
-   
     width: 100%;
 }
 
@@ -55,12 +53,12 @@ html, body {
     height: 100%;
 }
 
-#sidebar :not(:first-child){
-    color:#23285e
+#sidebar :not(:first-child):not(span){
+    font-size: xx-large;
 }
 
 #sidebar :first-child{
-    font-size: larger;
+    font-size: xxx-large;
     text-align: left;
     white-space: nowrap;
 }
@@ -71,12 +69,64 @@ html, body {
 
 #contact-page {
   font-family: arial;
-  font-variant: small-caps;
+  font-variant: small-caps; 
+}
+
+@media (orientation: portrait){
+  #container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr;
+  }
+
+  #sidebar {
+    border-right: none;
+    border-bottom: solid #e3dddd;
+    margin-bottom: 2vh;  
+  }
+
+  #image-scroll {
+    margin-top: 2vh;
+  }
+
+  #sidebar{
+    text-align: center;
+    font-size: 100px;
+  }
+
+  #sidebar :not(:first-child){
+    margin: 0;
+  }
+
+  #sidebar :first-child{
+    text-align: center;
+    font-size: 200px;
+    margin: 0;
+  }
+
+  #sidebar :not(:first-child).selected {
+    margin-right: -1vh;
+    color: #b70000;
+  }
+
+  #contact-page {
+    margin-top: 1vh;
+    font-size: 100px;
+    text-align: center;
+  }
+  #image-scroll img {
+    height: 10vw;
+    width: 10vh;
+  }
 }
 
 #contact-page img {
-  height: 50vw;
-  width: 50vw;
-  border-radius: 200px;
+  height: 50vh;
+  width: 50vh;
+  border-radius: 2000px;
   filter: grayscale(100%);
+  
+}
+
+span {
+  color: #b70000;
 }
