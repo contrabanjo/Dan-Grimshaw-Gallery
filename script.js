@@ -1,4 +1,4 @@
-const numberOfPicturesInFolder = 13;
+const numberOfPicturesInFolder = 24;
 
 let parent = document.getElementById("image-scroll");
 
