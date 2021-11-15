@@ -10,6 +10,9 @@ html, body {
   height: 100%;
 }
 
+.hidden {
+  opacity: 0%;
+}
 
 #container {
     padding-top: 1vh;
@@ -18,19 +21,16 @@ html, body {
     height: 100%;
 }
 
-#container img{
-    width: 100%;
-    height: 100%;
-}
 
-#image-scroll{
-    display:flex;
+#image-preview{
+    display: flex;
     align-items: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     width: 100%;
 }
 
-#image-scroll img {
+#image-preview img {
     height: 10vh;
     width: 10vw;
     margin-right: 6px;
@@ -38,8 +38,42 @@ html, body {
     object-fit: cover;
     filter: grayscale(100%);
 }
-#image-scroll img:hover {
+
+#image-preview img:hover {
     filter: grayscale(0%);
+}
+
+@media (orientation: landscape) {
+  #main-image{
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  #gallery{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  #image-preview{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #container{
+    position: absolute;
+  } 
+  
+  #sidebar {
+  }
+
+  #contact-page{
+    position: absolute;
+    left: 30%;
+    top: 10%;
+  }
+  
+  
+
 }
 
 #sidebar {
@@ -53,13 +87,21 @@ html, body {
     height: 100%;
 }
 
+#sidebar a{
+  display: block;
+  margin: 1vh;
+}
+
+#sidebar a:visited{
+  color: black;
+}
+
 #sidebar :not(:first-child):not(span){
     font-size: xx-large;
 }
 
 #sidebar :first-child{
     font-size: xxx-large;
-    text-align: left;
     white-space: nowrap;
 }
 
@@ -68,8 +110,14 @@ html, body {
 }
 
 #contact-page {
+/*   position: relative; */
   font-family: arial;
-  font-variant: small-caps; 
+  font-variant: small-caps;
+}
+
+#sidebar :not(:first-child).selected {
+    margin-right: -1vh;
+    color: #b70000;
 }
 
 @media (orientation: portrait){
@@ -78,23 +126,29 @@ html, body {
     grid-template-rows: 1fr 5fr;
   }
 
-  #sidebar {
-    border-right: none;
-    border-bottom: solid #e3dddd;
-    margin-bottom: 2vh;  
+  #main-image{
+    width: 100%;
+    object-fit: contain;
   }
 
-  #image-scroll {
+  #image-preview {
     margin-top: 2vh;
   }
 
   #sidebar{
+    border-right: none;
+    border-bottom: solid #e3dddd;
+    margin-bottom: 2vh;  
     text-align: center;
-    font-size: 100px;
   }
 
   #sidebar :not(:first-child){
     margin: 0;
+  }
+
+  #sidebar p:not(:first-child){
+    font-size: 80px;
+    
   }
 
   #sidebar :first-child{
@@ -103,17 +157,12 @@ html, body {
     margin: 0;
   }
 
-  #sidebar :not(:first-child).selected {
-    margin-right: -1vh;
-    color: #b70000;
-  }
-
   #contact-page {
     margin-top: 1vh;
     font-size: 100px;
     text-align: center;
   }
-  #image-scroll img {
+  #image-preview img {
     height: 10vw;
     width: 10vh;
   }
