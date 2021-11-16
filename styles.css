@@ -47,8 +47,8 @@ html, body {
   #main-image{
     height: 100vh;
     width: 100%;
-    object-fit: cover;
-    object-position: top;
+    object-fit: scale-down;
+    object-position: center;
   }
 
   #gallery{
@@ -62,9 +62,6 @@ html, body {
   #container{
     position: absolute;
   } 
-  
-  #sidebar {
-  }
 
   #contact-page{
     position: absolute;
@@ -110,7 +107,6 @@ html, body {
 }
 
 #contact-page {
-/*   position: relative; */
   font-family: arial;
   font-variant: small-caps;
 }
@@ -166,6 +162,9 @@ html, body {
     height: 10vw;
     width: 10vh;
   }
+
+  #fullsize-modal {
+  }
 }
 
 #contact-page img {
@@ -178,4 +177,27 @@ html, body {
 
 span {
   color: #b70000;
+}
+
+#fullsize-modal{
+  position: absolute;
+  background: #00000073;
+  font-family: sans-serif;
+  min-width: 100%;
+  min-height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+
+#fullsize-modal p{
+  font-family: sans-serif;
+  position: absolute;
+  font-size: 500%;
+  color: white;
+  background: grey;
+  margin: 2vw;
+  padding: 1vh;
+  border: solid 1vw;
+  opacity: 0.7
 }
