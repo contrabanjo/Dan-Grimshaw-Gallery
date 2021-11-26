@@ -182,15 +182,18 @@ span {
   place-content: center;
 }
 
+#fullsize-modal img{
+}
 
 #fullsize-modal p{
-  font-family: sans-serif;
   position: absolute;
+  font-family: sans-serif;
   font-size: 500%;
   color: white;
   background: grey;
   margin: 2vw;
   padding: 1vh;
   border: solid 1vw;
-  opacity: 0.7
+  opacity: 0.7;
+  cursor: pointer
 }
