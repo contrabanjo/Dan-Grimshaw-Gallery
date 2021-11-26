@@ -37,6 +37,7 @@ html, body {
     margin-bottom: 6px;
     object-fit: cover;
     filter: grayscale(100%);
+    cursor: pointer;
 }
 
 #image-preview img:hover {
@@ -59,17 +60,6 @@ html, body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
-  #container{
-    position: absolute;
-  } 
-
-  #contact-page{
-    position: absolute;
-    left: 30%;
-    top: 10%;
-  }
-  
-  
 
 }
 
@@ -95,6 +85,7 @@ html, body {
 
 #sidebar :not(:first-child):not(span){
     font-size: xx-large;
+    cursor: pointer;
 }
 
 #sidebar :first-child{

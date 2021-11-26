@@ -2,6 +2,12 @@ const numberOfPicturesInFolder = 24;
 //------------------------------------------------------------------------------------------//
 //don't edit anything below this line//
 //-----------------------------------------------------------------------------------------//
+const isTouchDevice = () => {
+    return (('ontouchstart' in window) ||
+      (navigator.maxTouchPoints > 0) ||
+      (navigator.msMaxTouchPoints > 0));
+}
+
 let current = "./images/1.jpg";
 
 let parent = document.getElementById("image-preview");
@@ -10,6 +16,7 @@ for(i = 1; i <= numberOfPicturesInFolder; i++){
    let newImg = document.createElement('img');
    newImg.src = "./images-50/" + i + ".jpg";
    newImg.name = i + ".jpg";
+   newImg.loading = "lazy"
    parent.appendChild(newImg);
 }
 
@@ -32,9 +39,9 @@ function handleMouseOut(e){
 
 document.querySelectorAll("#image-preview img").forEach(
     (e)=>{
-        e.addEventListener("click", updateMainImage);
         e.addEventListener("mouseover", handleMouseEnter);
         e.addEventListener("mouseout", handleMouseOut);
+        e.addEventListener("click", updateMainImage);
      }
 )
 //-----------------------------------------------------------------//
@@ -78,6 +85,8 @@ function showFullsize(e){
     document.getElementById("container").appendChild(modal);
 }
 
-document.querySelectorAll("#image-preview img").forEach(e => {
-    e.addEventListener("click", showFullsize);
-})
+if (!isTouchDevice()){
+    document.querySelectorAll("#image-preview img").forEach(e => {
+        e.addEventListener("click", showFullsize);
+    })
+}
