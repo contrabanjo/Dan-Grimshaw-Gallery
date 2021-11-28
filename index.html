@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div id="container">
-  <div id="sidebar">
-    <p>D<span>a</span>n Grimsh<span>a</span>w</p>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="sidebar">
+        <p>D<span>a</span>n Grimsh<span>a</span>w</p>
 
-    <p id="gallery-button">Gallery</p>
-    <p id="contact-button">Contact</p>
-  </div>
-  <div id="gallery">
-    <div id="image-scroll">
+        <p id="gallery-button">Gallery</p>
+        <p id="contact-button">Contact</p>
+      </div>
+      <!-- cannot put styles on any container or 'hidden' will not work -->
+      <div id="gallery-container">
+        <div id="gallery">
+          <div id="image-preview"></div>
+          <img id="main-image" src="./images-50/1.jpg" loading="lazy"/>
+        </div>
+      </div>
+      <div id="contact-page-container" hidden>
+        <div id="contact-page">
+          <img id="contact-photo" src="artist-photo.jpg" loading="lazy"/>
+          <p>
+            Dan Grimshaw is an artist working out of the Nevada City area in
+            California.
+          </p>
+          <p>Instagram: @punkisdad40</p>
+          <p>Email: twostars30@yahoo.com</p>
+        </div>
+      </div>
     </div>
-    <img id="main-image" src="1.jpg" >
-  </div>
-  <div id = "contact-page" hidden>
-     <img id="contact-photo" src="artist-photo.jpg">
-     <p>Dan Grimshaw is an artist working out of the Nevada City area in California.</p>
-     <p>Instagram: @punkisdad40</p>
-     <p>Email: twostars30@yahoo.com</p>
-  </div>
-</div>
-</body>
+  </body>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
+</html>
